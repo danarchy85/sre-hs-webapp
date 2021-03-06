@@ -1,0 +1,25 @@
+<html>
+  <h2>
+    <p>Hearthstone Card Lookup</p>
+  </h2>
+
+  <body>
+    <form method='GET' action='/search'>
+      <label for="class">Class: </label>
+      <select id='class' name='class'>
+	<option value='warlock'>Warlock</option>
+	<option value='druid'>Druid</option>
+	<option value='hunter'>Hunter</option>
+	<option value='mage'>Mage</option>
+	<option value='paladin'>Paladin</option>
+	<option value='priest'>Priest</option>
+	<option value='rogue'>Rogue</option>
+	<option value='shaman'>Shaman</option>
+	<option value='warrior'>Warrior</option>
+      </select>
+      <p>Mana:   <input type='text' name='manaCost' value='7'></p>
+      <p>Rarity: <input type='text' name='rarity' value='Legendary'></p>
+      <input type='submit'>
+    </form>
+  </body>
+</html>

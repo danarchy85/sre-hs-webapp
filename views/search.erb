@@ -1,0 +1,49 @@
+<html>
+  <h3>
+    <p>Hearthstone Search</p>
+    <p><a href='/'>New Search</a></p>
+  </h3>
+
+  <body>
+    Filter: <br>
+    <% @params.each do |k,v| %>
+    <%= "  #{k} => #{v}" %><br>
+    <% end %>
+    <br>
+    <% if @cards.empty? %>
+    No results found!
+    <% else %>
+    <% @cards.first(10).each do |card| %>
+    <table>
+      <td><img src=<%= "#{card['image'][settings.locale]}" %> width='250'></td>
+
+      <td>
+	<table>
+	  <tr>
+	    <td>Name: </td>
+	    <td><%= "#{card['name'][settings.locale]}" %></td>
+	  </tr>
+	  <tr>
+	    <td>Class: </td>
+	    <td><%= "#{card['classId']}" %></td>
+	  </tr>
+	  <tr>
+	    <td>Type: </td>
+	    <td><%= "#{card['cardTypeId']}" %></td>
+	  </tr>
+	  <tr>
+	    <td>Rarity: </td>
+	    <td><%= "#{card['rarityId']}" %></td>
+	  </tr>
+	  <tr>
+	    <td>Set: </td>
+	    <td><%= "#{card['cardSetId']}" %></td>
+	  </tr>
+	</table>
+      </td>
+      <% end %>
+    </table>
+    <br>
+    <% end %>
+  </body>
+</html>
