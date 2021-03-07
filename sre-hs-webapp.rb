@@ -21,10 +21,6 @@ get '/search' do
   end
 end
 
-get '/results' do
-  erb :results
-end
-
 private 
 def client
   OAuth2::Client.new(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], site: 'https://us.battle.net')
