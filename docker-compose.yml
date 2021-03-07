@@ -1,0 +1,5 @@
+services:
+  sre-hs-webapp:
+    image: sre-hs-webapp
+    network_mode: host
+    env_file: .config/.dev.env
