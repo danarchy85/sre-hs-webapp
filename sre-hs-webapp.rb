@@ -9,9 +9,11 @@ get '/' do
 end
 
 get '/search' do
+  @params['pageSize'] = '10'
+  @params['sort']     = 'id'
   downcase_params
-  url = '/hearthstone/cards'
 
+  url = "/hearthstone/cards?locale=#{settings.locale}"
   response = get_response(url)
   if response
     @cards = response['cards']

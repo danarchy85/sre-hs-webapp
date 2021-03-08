@@ -6,22 +6,27 @@
 
   <body>
     Filter: <br>
-    <% @params.each do |k,v| %>
-    <%= "  #{k} => #{v}" %><br>
-    <% end %>
+    <table>
+      <% @params.each do |k,v| %>
+      <tr>
+	<td><%= "#{k}: " %></td>
+	<td><%= "#{v}" %></td>
+      </tr>
+      <% end %>
+    </table>
     <br>
     <% if @cards.empty? %>
     No results found!
     <% else %>
-    <% @cards.first(10).each do |card| %>
+    <% @cards.each do |card| %>
     <table>
-      <td><img src=<%= "#{card['image'][settings.locale]}" %> width='250'></td>
+      <td><img src=<%= "#{card['image']}" %> width='250'></td>
 
       <td>
 	<table>
 	  <tr>
 	    <td>Name: </td>
-	    <td><%= "#{card['name'][settings.locale]}" %></td>
+	    <td><%= "#{card['name']}" %></td>
 	  </tr>
 	  <tr>
 	    <td>Type: </td>
